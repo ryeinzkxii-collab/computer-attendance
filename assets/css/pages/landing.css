@@ -695,3 +695,14 @@ footer {
     gap: 24px;
   }
 }
+/* Generous spacing separating feedback cards from the CTA section */
+.cta-area {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+/* Clear gap between headline and button */
+.cta-area h3 {
+  margin-bottom: 1.5rem;
+}
