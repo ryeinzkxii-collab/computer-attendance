@@ -1,18 +1,9 @@
 const accountService = require("../services/account-service.js");
 
 // CREATE - Register a new account
-const handleCreateAccount = async (req, res) => {
+const createAccount = async (req, res) => {
   try {
     const { username, password } = req.body;
-
-    // Check if account already exists
-    const existingAccount = await accountService.findAccountByUsername(username);
-    if (existingAccount) {
-      return res.status(409).json({
-        success: false,
-        message: "Username is already taken.",
-      });
-    }
 
     const result = await accountService.createAccount(username, password);
 
@@ -32,8 +23,8 @@ const handleCreateAccount = async (req, res) => {
   }
 };
 
-// READ - Get all accounts
-const handleFindAllAccounts = async (req, res) => {
+// READ - Get all registered accounts
+const findAllAccounts = async (req, res) => {
   try {
     const accounts = await accountService.findAllAccounts();
 
@@ -45,16 +36,16 @@ const handleFindAllAccounts = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       success: false,
-      message: "Server error while fetching accounts.",
-      error: error.message,
+      message: error.message || "Failed to fetch accounts.",
     });
   }
 };
 
-// READ - Get single account by ID
-const handleFindAccountById = async (req, res) => {
+// READ - Get account by ID
+const findAccountById = async (req, res) => {
   try {
     const { id } = req.params;
+
     const account = await accountService.findAccountById(id);
 
     if (!account) {
@@ -71,15 +62,16 @@ const handleFindAccountById = async (req, res) => {
   } catch (error) {
     return res.status(400).json({
       success: false,
-      message: error.message || "Invalid account ID.",
+      message: error.message || "Failed to retrieve account.",
     });
   }
 };
 
-// READ - Get single account by username
-const handleFindAccountByUsername = async (req, res) => {
+// READ - Get account by username
+const findAccountByUsername = async (req, res) => {
   try {
     const { username } = req.params;
+
     const account = await accountService.findAccountByUsername(username);
 
     if (!account) {
@@ -96,26 +88,25 @@ const handleFindAccountByUsername = async (req, res) => {
   } catch (error) {
     return res.status(400).json({
       success: false,
-      message: error.message || "Invalid username.",
+      message: error.message || "Failed to retrieve account.",
     });
   }
 };
 
 // UPDATE - Update account by ID
-const handleUpdateAccount = async (req, res) => {
+const updateAccount = async (req, res) => {
   try {
     const { id } = req.params;
     const { username, password } = req.body;
 
-    const existingAccount = await accountService.findAccountById(id);
-    if (!existingAccount) {
+    const result = await accountService.updateAccount(id, username, password);
+
+    if (result.affectedRows === 0) {
       return res.status(404).json({
         success: false,
-        message: "Account not found.",
+        message: "Account not found or no changes made.",
       });
     }
-
-    await accountService.updateAccount(id, username, password);
 
     return res.status(200).json({
       success: true,
@@ -130,19 +121,18 @@ const handleUpdateAccount = async (req, res) => {
 };
 
 // DELETE - Delete account by ID
-const handleDeleteAccount = async (req, res) => {
+const deleteAccount = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const existingAccount = await accountService.findAccountById(id);
-    if (!existingAccount) {
+    const result = await accountService.deleteAccount(id);
+
+    if (result.affectedRows === 0) {
       return res.status(404).json({
         success: false,
         message: "Account not found.",
       });
     }
-
-    await accountService.deleteAccount(id);
 
     return res.status(200).json({
       success: true,
@@ -157,10 +147,10 @@ const handleDeleteAccount = async (req, res) => {
 };
 
 module.exports = {
-  handleCreateAccount,
-  handleFindAllAccounts,
-  handleFindAccountById,
-  handleFindAccountByUsername,
-  handleUpdateAccount,
-  handleDeleteAccount,
+  createAccount,
+  findAllAccounts,
+  findAccountById,
+  findAccountByUsername,
+  updateAccount,
+  deleteAccount,
 };
