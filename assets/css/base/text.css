@@ -197,3 +197,32 @@
 .text-warning-info {
   color: var(--color-info-warning);
 }
+
+/* ============================================================
+   TEXT
+   Computer Attendance System
+============================================================ */
+
+/* ============================================================
+   FONT FAMILY
+============================================================ */
+
+.font-sans {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+.font-serif {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.font-mono {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}

@@ -49,3 +49,172 @@
 .d-contents {
   display: contents;
 }
+
+/* ============================================================
+   DISPLAY
+   Computer Attendance System
+============================================================ */
+
+/* ============================================================
+   DISPLAY TYPES
+============================================================ */
+
+.d-none {
+  display: none !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.d-inline {
+  display: inline !important;
+}
+
+.d-inline-block {
+  display: inline-block !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.d-inline-flex {
+  display: inline-flex !important;
+}
+
+.d-grid {
+  display: grid !important;
+}
+
+.d-inline-grid {
+  display: inline-grid !important;
+}
+
+.d-table {
+  display: table !important;
+}
+
+.d-inline-table {
+  display: inline-table !important;
+}
+
+.d-table-row {
+  display: table-row !important;
+}
+
+.d-table-cell {
+  display: table-cell !important;
+}
+
+/* ============================================================
+   FLEX DISPLAY HELPERS
+============================================================ */
+
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+/* ============================================================
+   GRID DISPLAY HELPERS
+============================================================ */
+
+.grid {
+  display: grid;
+}
+
+.inline-grid {
+  display: inline-grid;
+}
+
+/* ============================================================
+   VISIBILITY
+============================================================ */
+
+.visible {
+  visibility: visible !important;
+}
+
+.invisible {
+  visibility: hidden !important;
+}
+
+/* ============================================================
+   RESPONSIVE DISPLAY
+============================================================ */
+
+@media (max-width: 1200px) {
+  .d-xl-none {
+    display: none !important;
+  }
+
+  .d-xl-block {
+    display: block !important;
+  }
+
+  .d-xl-flex {
+    display: flex !important;
+  }
+
+  .d-xl-grid {
+    display: grid !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .d-lg-none {
+    display: none !important;
+  }
+
+  .d-lg-block {
+    display: block !important;
+  }
+
+  .d-lg-flex {
+    display: flex !important;
+  }
+
+  .d-lg-grid {
+    display: grid !important;
+  }
+}
+
+@media (max-width: 650px) {
+  .d-md-none {
+    display: none !important;
+  }
+
+  .d-md-block {
+    display: block !important;
+  }
+
+  .d-md-flex {
+    display: flex !important;
+  }
+
+  .d-md-grid {
+    display: grid !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .d-sm-none {
+    display: none !important;
+  }
+
+  .d-sm-block {
+    display: block !important;
+  }
+
+  .d-sm-flex {
+    display: flex !important;
+  }
+
+  .d-sm-grid {
+    display: grid !important;
+  }
+}
