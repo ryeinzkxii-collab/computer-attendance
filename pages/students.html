@@ -9,6 +9,7 @@
   </head>
 
   <body class="w-screen h-screen d-flex flex-row bg-light">
+    <!-- Sidebar Navigation -->
     <aside class="pl-5 w-384">
       <div class="pr-5 h-100 d-flex flex-column border-light-gray border-r">
         <!-- Logo -->
@@ -23,7 +24,7 @@
           </div>
         </div>
 
-        <!-- Navigation -->
+        <!-- Navigation Menu -->
         <nav class="mt-8 d-flex flex-1 flex-column gap-2">
           <!-- Dashboard -->
           <a href="./dashboard.html" class="btn-tertiary btn-nav">
@@ -43,7 +44,7 @@
             Students
           </a>
 
-          <!-- Computer -->
+          <!-- Computer Submenu -->
           <div class="d-flex flex-column">
             <button id="computerToggle" class="btn-tertiary btn-nav__sub-item">
               <div>
@@ -60,7 +61,7 @@
             </div>
           </div>
 
-          <!-- School -->
+          <!-- School Submenu -->
           <div class="d-flex flex-column">
             <button id="schoolToggle" class="btn-tertiary btn-nav__sub-item">
               <div>
@@ -78,7 +79,7 @@
             </div>
           </div>
 
-          <!-- Staff/Accounts -->
+          <!-- Accounts -->
           <a href="./accounts.html" class="btn-tertiary btn-nav">
             <span class="mr-1 fa-solid fa-user-tie"></span>
             Accounts
@@ -96,13 +97,14 @@
           <a href="../index.html" class="w-100 btn-tertiary btn-nav">
             <span class="fa-solid fa-right-to-bracket"></span>
             Sign-out
-          </a>    
+          </a>
         </div>
       </div>
     </aside>
 
-    <!-- Main container -->
+    <!-- Main Workspace Area -->
     <div class="w-100 h-screen bg-warning">
+      <!-- Welcome Header -->
       <header class="p-5 d-flex flex-row items-center header__h-15">
         <div
           class="px-5 w-100 h-100 d-flex flex-row justify-between items-center bg-white border border-light-gray rounded-md shadow-md"
@@ -115,116 +117,108 @@
           <h1 class="text-primary text-xl">Attendance</h1>
         </div>
       </header>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Attendance</title>
-</head>
-<body>
 
-    <header>
-        <h1>Student Attendance</h1>
-        <p>Welcome! Please complete the form to record your attendance.</p>
-        <hr>
-    </header>
+      <!-- Main Content Container (Placed Directly Below Header) -->
+      <main class="p-5 d-flex flex-column gap-5 main-container__h-85">
+        <section class="p-5 bg-white border border-light-gray rounded-md shadow-md">
+          <h2 class="text-lg font-bold text-dark mb-4">Student Information</h2>
 
-    <main>
-        <section>
-            <h2>Attendance Registration</h2>
-            <p></p>
+          <form action="#" method="post" class="d-flex flex-column gap-3">
+            <fieldset class="border border-light-gray p-4 rounded-md">
+              <legend class="px-2 text-sm font-semibold text-primary">Lab Station Details</legend>
 
+              <div class="d-flex flex-column gap-1 mb-3">
+                <label for="pcnumber" class="text-sm font-semibold text-dark">PC Number:</label>
+                <input
+                  type="text"
+                  id="pcnumber"
+                  name="pcnumber"
+                  placeholder="Enter PC number (e.g., PC-01)"
+                  class="p-2 border border-light-gray rounded-md"
+                  required
+                />
+              </div>
 
+              <div class="d-flex flex-column gap-1">
+                <label for="status" class="text-sm font-semibold text-dark">Status:</label>
+                <input
+                  type="text"
+                  id="status"
+                  name="status"
+                  placeholder="Enter status (e.g., Active / In-Use)"
+                  class="p-2 border border-light-gray rounded-md"
+                  required
+                />
+              </div>
+            </fieldset>
 
-            <form action="#" method="post">
+            <fieldset class="border border-light-gray p-4 rounded-md">
+              <legend class="px-2 text-sm font-semibold text-primary">Attendance Registration</legend>
 
-                <fieldset>
-                    <legend>Student Information</legend>
+              <div class="d-flex flex-column gap-1 mb-3">
+                <label for="student" class="text-sm font-semibold text-dark">Student Name:</label>
+                <input
+                  type="text"
+                  id="student"
+                  name="student"
+                  placeholder="Enter your full name"
+                  class="p-2 border border-light-gray rounded-md"
+                  required
+                />
+              </div>
 
-                    <p>
-                        <label for="student">Student Name:</label><br>
-                        <input
-                            type="text"
-                            id="student"
-                            name="student"
-                            placeholder="Enter your full name"
-                            required>
-                    </p>
+              <div class="d-flex flex-column gap-1 mb-3">
+                <label for="attendance_date" class="text-sm font-semibold text-dark">Attendance Date:</label>
+                <input
+                  type="date"
+                  id="attendance_date"
+                  name="attendance_date"
+                  class="p-2 border border-light-gray rounded-md"
+                  required
+                />
+              </div>
 
-                    <p>
-                        <label for="computer">Computer Number:</label><br>
-                        <input
-                            type="text"
-                            id="computer"
-                            name="computer"
-                            placeholder="Enter computer number"
-                            required>
-                    </p>
-                </fieldset>
+              <div class="d-flex flex-row gap-3 mb-3">
+                <div class="d-flex flex-column gap-1 flex-1">
+                  <label for="time_in" class="text-sm font-semibold text-dark">Time In:</label>
+                  <input
+                    type="time"
+                    id="time_in"
+                    name="time_in"
+                    class="p-2 border border-light-gray rounded-md"
+                    required
+                  />
+                </div>
 
-                <br>
+                <div class="d-flex flex-column gap-1 flex-1">
+                  <label for="time_out" class="text-sm font-semibold text-dark">Time Out:</label>
+                  <input type="time" id="time_out" name="time_out" class="p-2 border border-light-gray rounded-md" />
+                </div>
+              </div>
 
-                <fieldset>
-                    <legend></legend>
+              <div class="d-flex flex-column gap-1">
+                <label for="purpose" class="text-sm font-semibold text-dark">Purpose:</label>
+                <textarea
+                  id="purpose"
+                  name="purpose"
+                  rows="3"
+                  placeholder="Enter purpose of laboratory usage"
+                  class="p-2 border border-light-gray rounded-md"
+                  required
+                ></textarea>
+              </div>
+            </fieldset>
 
-                    <p>
-                        <label for="attendance_date">Attendance Date:</label><br>
-                        <input
-                            type="date"
-                            id="attendance_date"
-                            name="attendance_date"
-                            required>
-                    </p>
-
-                    <p>
-                        <label for="time_in">Time In:</label><br>
-                        <input
-                            type="time"
-                            id="time_in"
-                            name="time_in"
-                            required>
-                    </p>
-
-                    <p>
-                        <label for="time_out">Time Out:</label><br>
-                        <input
-                            type="time"
-                            id="time_out"
-                            name="time_out">
-                    </p>
-
-                    <p>
-                        <label for="purpose">Purpose:</label><br>
-                        <textarea
-                            id="purpose"
-                            name="purpose"
-                            rows="4"
-                            cols="35"
-                            placeholder="Enter your purpose"
-                            required></textarea>
-                    </p>
-                </fieldset>
-
-                <br>
-
-                <button type="submit">Submit Attendance</button>
-                <button type="reset">Clear Form</button>
-
-            </form>
+            <div class="d-flex flex-row gap-2 mt-2">
+              <button type="submit" class="btn btn-primary">Submit Attendance</button>
+              <button type="reset" class="btn btn-tertiary">Clear Form</button>
+            </div>
+          </form>
         </section>
-    </main>
-
-    <footer>
-        <hr>
-        <p></p>
-    </footer>
-
-</body>
-</html>
-
-
+      </main>
+    </div>
   </body>
+
   <script type="module" src="../assets/js/main.js"></script>
   <script type="module" src="../assets/js/pages/attendance.js"></script>
 </html>
