@@ -116,7 +116,48 @@
         </div>
       </header>
 
-      <main class="p-5 d-flex flex-column gap-5 main-container__h-85"></main>
+      <!-- Main Content Area -->
+      <main class="p-5 d-flex flex-column gap-5 main-container__h-85">
+        <!-- Student Information Form Card -->
+        <section class="p-5 bg-white border border-light-gray rounded-md shadow-md">
+          <h2 class="text-lg font-bold text-dark mb-4">Student Information Form</h2>
+          <form class="d-flex flex-column gap-3">
+            <div class="d-flex flex-column gap-1">
+              <label for="grade-section" class="text-sm font-semibold text-dark">Grade & Section:</label>
+              <input
+                type="text"
+                id="grade-section"
+                name="grade_section"
+                class="p-2 border border-light-gray rounded-md"
+              />
+            </div>
+
+            <div class="d-flex flex-column gap-1">
+              <label for="lastname" class="text-sm font-semibold text-dark">Last Name:</label>
+              <input type="text" id="lastname" name="lastname" class="p-2 border border-light-gray rounded-md" />
+            </div>
+
+            <div class="d-flex flex-column gap-1">
+              <label for="firstname" class="text-sm font-semibold text-dark">First Name:</label>
+              <input type="text" id="firstname" name="firstname" class="p-2 border border-light-gray rounded-md" />
+            </div>
+
+            <div class="d-flex flex-column gap-1">
+              <label for="middlename" class="text-sm font-semibold text-dark">Middle Name:</label>
+              <input type="text" id="middlename" name="middlename" class="p-2 border border-light-gray rounded-md" />
+            </div>
+
+            <div class="d-flex flex-column gap-1">
+              <label for="contact-no" class="text-sm font-semibold text-dark">Contact No:</label>
+              <input type="text" id="contact-no" name="contact_no" class="p-2 border border-light-gray rounded-md" />
+            </div>
+
+            <div class="mt-2">
+              <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+          </form>
+        </section>
+      </main>
     </div>
   </body>
   <script type="module" src="../assets/js/main.js"></script>
