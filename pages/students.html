@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Computer | Students</title>
+    <title>Computer | Attendance</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/pages/students.css" />
+    <link rel="stylesheet" href="../assets/css/pages/attendance.css" />
   </head>
 
   <body class="w-screen h-screen d-flex flex-row bg-light">
@@ -32,13 +32,13 @@
           </a>
 
           <!-- Attendance -->
-          <a href="./attendance.html" class="btn-tertiary btn-nav">
+          <a href="./attendance.html" class="btn-tertiary btn-tertiary__is-active btn-nav">
             <span class="fa-solid fa-clipboard-user"></span>
             Attendance
           </a>
 
           <!-- Students -->
-          <a href="./students.html" class="btn-tertiary btn-tertiary__is-active btn-nav">
+          <a href="./students.html" class="btn-tertiary btn-nav">
             <span class="fa-solid fa-users"></span>
             Students
           </a>
@@ -96,7 +96,7 @@
           <a href="../index.html" class="w-100 btn-tertiary btn-nav">
             <span class="fa-solid fa-right-to-bracket"></span>
             Sign-out
-          </a>
+          </a>    
         </div>
       </div>
     </aside>
@@ -112,13 +112,119 @@
             <h1 class="text-secondary text-xl">Juan Dela Cruz</h1>
           </div>
 
-          <h1 class="text-primary text-xl">Students</h1>
+          <h1 class="text-primary text-xl">Attendance</h1>
         </div>
       </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance</title>
+</head>
+<body>
 
-      <main class="p-5 d-flex flex-column gap-5 main-container__h-85"></main>
-    </div>
+    <header>
+        <h1>Student Attendance</h1>
+        <p>Welcome! Please complete the form to record your attendance.</p>
+        <hr>
+    </header>
+
+    <main>
+        <section>
+            <h2>Attendance Registration</h2>
+            <p></p>
+
+
+
+            <form action="#" method="post">
+
+                <fieldset>
+                    <legend>Student Information</legend>
+
+                    <p>
+                        <label for="student">Student Name:</label><br>
+                        <input
+                            type="text"
+                            id="student"
+                            name="student"
+                            placeholder="Enter your full name"
+                            required>
+                    </p>
+
+                    <p>
+                        <label for="computer">Computer Number:</label><br>
+                        <input
+                            type="text"
+                            id="computer"
+                            name="computer"
+                            placeholder="Enter computer number"
+                            required>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+                    <legend></legend>
+
+                    <p>
+                        <label for="attendance_date">Attendance Date:</label><br>
+                        <input
+                            type="date"
+                            id="attendance_date"
+                            name="attendance_date"
+                            required>
+                    </p>
+
+                    <p>
+                        <label for="time_in">Time In:</label><br>
+                        <input
+                            type="time"
+                            id="time_in"
+                            name="time_in"
+                            required>
+                    </p>
+
+                    <p>
+                        <label for="time_out">Time Out:</label><br>
+                        <input
+                            type="time"
+                            id="time_out"
+                            name="time_out">
+                    </p>
+
+                    <p>
+                        <label for="purpose">Purpose:</label><br>
+                        <textarea
+                            id="purpose"
+                            name="purpose"
+                            rows="4"
+                            cols="35"
+                            placeholder="Enter your purpose"
+                            required></textarea>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <button type="submit">Submit Attendance</button>
+                <button type="reset">Clear Form</button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <hr>
+        <p></p>
+    </footer>
+
+</body>
+</html>
+
+
   </body>
   <script type="module" src="../assets/js/main.js"></script>
-  <script type="module" src="../assets/js/pages/students.js"></script>
+  <script type="module" src="../assets/js/pages/attendance.js"></script>
 </html>
